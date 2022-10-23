@@ -12,3 +12,5 @@ In the project directory, you can run:
 
 ### `npm start` : for start the project local and open [http://localhost:3000](http://localhost:3000)
 ### `npm build` : for deploy the project to the online host you can open [https://mahmoud-sayed.github.io/ellyana-plus](https://mahmoud-sayed.github.io/ellyana-plus)
+
+## project steps creation

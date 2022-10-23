@@ -1,8 +1,11 @@
 import React from 'react';
+import { Box } from '@mui/material';
+import TopNav from './TopNav/TopNav';
+
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <Box><TopNav /></Box>
   );
 };
 
