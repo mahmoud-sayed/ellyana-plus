@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ellyana-plus/static/css/main.f9c526db.css",
+    "main.js": "/ellyana-plus/static/js/main.dc1253c1.js",
+    "index.html": "/ellyana-plus/index.html",
+    "main.f9c526db.css.map": "/ellyana-plus/static/css/main.f9c526db.css.map",
+    "main.dc1253c1.js.map": "/ellyana-plus/static/js/main.dc1253c1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f9c526db.css",
+    "static/js/main.dc1253c1.js"
+  ]
+}
