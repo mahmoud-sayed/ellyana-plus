@@ -1,11 +1,17 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import { AppBar, Stack } from '@mui/material';
 import TopNav from './TopNav/TopNav';
+import BottomNav from './BottomNav/BottomNav';
 
 
 const Navbar = () => {
   return (
-    <Box><TopNav /></Box>
+    <Stack >
+      <AppBar>
+        <TopNav />
+        <BottomNav />
+      </AppBar>
+    </Stack>
   );
 };
 

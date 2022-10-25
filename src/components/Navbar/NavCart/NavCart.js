@@ -5,12 +5,14 @@ const NavCart = () => {
   return (
     <Stack direction='row' spacing={1} alignItems='center' sx={{ cursor: 'pointer' }}>
       <IconButton>
-        <Badge color="error" badgeContent="0">
-          <ShoppingCartOutlinedIcon />
+        <Badge color="error" badgeContent="0" >
+          <ShoppingCartOutlinedIcon
+            sx={{ fontSize: { xs: '1.5rem', sm: '2rem' }, color: '#000' }}
+          />
         </Badge>
       </IconButton>
-      <Typography>My Cart</Typography>
-    </Stack>
+      <Typography sx={{ display: { xs: 'none', sm: 'initial' } }}>My Cart</Typography>
+    </Stack >
 
   );
 };

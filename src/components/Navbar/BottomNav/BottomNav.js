@@ -1,8 +1,11 @@
+import { Container } from '@mui/material';
 import React from 'react';
 
 const BottomNav = () => {
   return (
-    <div>BottomNav</div>
+    <Container maxWidth='xl'>
+
+    </Container>
   );
 };
 
