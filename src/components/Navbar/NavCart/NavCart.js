@@ -11,7 +11,10 @@ const NavCart = () => {
           />
         </Badge>
       </IconButton>
-      <Typography sx={{ display: { xs: 'none', sm: 'initial' } }}>My Cart</Typography>
+      <Stack direction='column'>
+        <Typography sx={{ display: { xs: 'none', sm: 'initial' }, color: '#000' }}>My Cart</Typography>
+        <Typography sx={{ display: { xs: 'none', sm: 'initial' }, color: '#000' }}>$165</Typography>
+      </Stack>
     </Stack >
 
   );

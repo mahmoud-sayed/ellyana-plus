@@ -1,12 +1,16 @@
+import { createTheme, ThemeProvider } from '@mui/material';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
+import MUITheme from './MUITheme/Theme';
+
+const theme = createTheme(MUITheme);
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Navbar />
-    </div>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
