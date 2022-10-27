@@ -5,6 +5,7 @@ import NavCart from '../NavCart/NavCart';
 import logo from './../../../assets/TopNavAssets/logo.svg';
 import DrawerComponent from '../Drawer/Drawer';
 
+
 const TopNav = () => {
 
   return (
@@ -15,6 +16,7 @@ const TopNav = () => {
           <img style={{ width: '180px' }} src={logo} alt="ellyana logo" />
           <NavCart />
         </Stack>
+
       </Container >
     </Toolbar >
   );
