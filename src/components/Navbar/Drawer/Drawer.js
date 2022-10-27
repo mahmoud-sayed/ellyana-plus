@@ -1,11 +1,7 @@
 import React, { useState, Fragment } from 'react';
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, IconButton, Divider, Grid, useTheme, Toolbar, Typography, Stack } from '@mui/material';
+import { Drawer, List, ListItemButton, ListItemText, IconButton, Divider, Grid, useTheme, Toolbar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
-import PersonIcon from '@mui/icons-material/Person';
-import WorkIcon from '@mui/icons-material/Work';
-import DesktopWindowsIcon from '@mui/icons-material/DesktopWindows';
-import CallIcon from '@mui/icons-material/Call';
 import style from './Drawer-style';
 
 
@@ -13,7 +9,7 @@ const DrawerComponent = () => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
 
-
+  //this list can be only one list item and map() od the list items so we will not re write the code again and again
   return (
     <Fragment>
       <IconButton size='large' edge='start' onClick={() => setOpen(true)}
@@ -34,7 +30,6 @@ const DrawerComponent = () => {
       >
         <List sx={style('ListBackGround', theme)} >
           <Toolbar />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -50,9 +45,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -67,9 +60,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -84,9 +75,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -101,9 +90,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -118,9 +105,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -135,9 +120,7 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
           <Divider sx={style('divider', theme)} />
-
           <ListItemButton
             divider={true}
             sx={style('ListItemButton', theme)}
@@ -152,8 +135,6 @@ const DrawerComponent = () => {
               </Grid>
             </Grid>
           </ListItemButton>
-
-
         </List>
       </Drawer>
     </Fragment >
