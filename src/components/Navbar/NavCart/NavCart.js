@@ -1,14 +1,14 @@
+import React, { Fragment, useState } from 'react';
 import { Badge, IconButton, Stack, Typography, Menu, MenuItem, } from '@mui/material';
-import React, { Fragment } from 'react';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { Logout, PersonAdd, Settings } from '@mui/icons-material';
 
 
 
 
 const NavCart = () => {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };

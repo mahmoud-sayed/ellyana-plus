@@ -7,8 +7,21 @@ const style = (styleName, theme) => {
     'listItem': {
       height: '100%',
       '&:hover': {
-        backgroundColor: '#444444'
-      }
+        backgroundColor: '#444444',
+        '&:before': {
+          content: '""',
+          display: 'block',
+          position: 'absolute',
+          bottom: -10,
+          right: '50%',
+          width: 10,
+          height: 10,
+          bgcolor: '#444444',
+          transform: 'translateY(-50%) rotate(45deg)',
+          zIndex: 0,
+        },
+      },
+
     },
     'listItemSearch': {
       height: '100%',
