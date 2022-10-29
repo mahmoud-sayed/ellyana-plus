@@ -1,4 +1,4 @@
-import { Badge, IconButton, Stack, Typography, Avatar, Divider, ListItemIcon, Menu, MenuItem, } from '@mui/material';
+import { Badge, IconButton, Stack, Typography, Menu, MenuItem, } from '@mui/material';
 import React, { Fragment } from 'react';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { Logout, PersonAdd, Settings } from '@mui/icons-material';
@@ -7,9 +7,18 @@ import { Logout, PersonAdd, Settings } from '@mui/icons-material';
 
 
 const NavCart = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <Fragment>
-      <Stack direction='row' spacing={1} alignItems='center' sx={{ cursor: 'pointer' }}>
+      <Stack onClick={handleClick} direction='row' spacing={1} alignItems='center' sx={{ cursor: 'pointer' }}>
         <IconButton>
           <Badge color="error" badgeContent="0" >
             <ShoppingCartOutlinedIcon
@@ -23,16 +32,20 @@ const NavCart = () => {
         </Stack>
       </Stack >
       <Menu
-
+        anchorEl={anchorEl}
         id="account-menu"
-        open={true}
-
+        open={open}
+        onClose={handleClose}
+        onClick={handleClose}
         PaperProps={{
           elevation: 0,
           sx: {
             overflow: 'visible',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
-            mt: 10,
+            mt: .5,
+            width: 500,
+            marginRight: '50px',
+
             '& .MuiAvatar-root': {
               width: 32,
               height: 32,
@@ -44,7 +57,7 @@ const NavCart = () => {
               display: 'block',
               position: 'absolute',
               top: 0,
-              right: 10,
+              right: { xs: 22, sm: 75, md: 85 },
               width: 10,
               height: 10,
               bgcolor: 'background.paper',
@@ -57,30 +70,9 @@ const NavCart = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /> Profile
+          <Typography >There is no Item yet</Typography>
         </MenuItem>
-        <MenuItem>
-          <Avatar /> My account
-        </MenuItem>
-        <Divider />
-        <MenuItem>
-          <ListItemIcon>
-            <PersonAdd fontSize="small" />
-          </ListItemIcon>
-          Add another account
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Settings
-        </MenuItem>
-        <MenuItem>
-          <ListItemIcon>
-            <Logout fontSize="small" />
-          </ListItemIcon>
-          Logout
-        </MenuItem>
+
       </Menu>
     </Fragment>
   );
