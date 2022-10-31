@@ -9,10 +9,16 @@ import HoverMenu from './HoverMenu/HoverMenu';
 
 
 const BottomNav = () => {
-  // const [anchorEl, setAnchorEl] = useState(null);
-  // const open = Boolean(anchorEl);
+  const [anchorEl, setAnchorEl] = useState({
+    home: false,
+    brands: false,
+    lookBook: false,
+    accessories: false,
+    pages: false
+  });
+  const openHome = Boolean(anchorEl.home);
   const theme = createTheme();
-
+  console.log({ anchorEl });
 
 
   // const handleClick = (event) => {
@@ -32,16 +38,18 @@ const BottomNav = () => {
             <Grid item container justifyContent='center' alignItems='center' sx={{ height: '100%', width: '100%' }}>
               <Grid item sx={{ height: '100%', display: { xs: 'none', md: 'initial' } }}
                 name='HOME'
-              // onClick={handleClick}
+                onClick={() => setAnchorEl({ ...anchorEl, home: true }, console.log({ anchorEl }))}
               // onMouseLeave={handleClose}
               >
                 <MenuItem sx={style('listItem', theme)}>
                   <ListItemIcon><HomeIcon fontSize='small' sx={{ color: '#fff' }} /></ListItemIcon>
                   <Typography variant='body2'>HOME</Typography>
                 </MenuItem>
-                {/* <HoverMenu 
-                // open={open} handleClose={handleClose} anchorEl={anchorEl} data={'home'}
-                 /> */}
+                <HoverMenu
+                  open={openHome}
+                  handleClose={() => setAnchorEl({ ...anchorEl, home: null })}
+                  anchorEl={openHome} data={'home'}
+                />
               </Grid>
               <Grid item sx={{ height: '100%', display: { xs: 'none', md: 'initial' } }}
                 name='BRANDS'
