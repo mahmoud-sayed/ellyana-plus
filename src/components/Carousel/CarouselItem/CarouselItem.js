@@ -4,7 +4,7 @@ import { Paper } from '@mui/material';
 
 const CarouselItem = (props) => {
   return (
-    <Paper sx={{ height: '70vh' }}>
+    <Paper sx={{ boxShadow: 'none' }}>
       <img
         style={{ height: '100%', width: '100%' }}
         src={props.item} alt="" />
