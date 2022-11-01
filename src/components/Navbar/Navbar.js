@@ -7,7 +7,7 @@ import BottomNav from './BottomNav/BottomNav';
 const Navbar = () => {
   return (
     <Stack >
-      <AppBar sx={{ position: 'relative' }}>
+      <AppBar sx={{ position: 'relative', paddingRight: '0px !important' }}>
         <TopNav />
         <BottomNav />
       </AppBar>
