@@ -5,9 +5,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 // images import
-import img1 from './../../assets/Banner/banner-01.jpg';
-import img2 from './../../assets/Banner/banner-02.jpg';
-import img3 from './../../assets/Banner/banner-03.jpg';
+import img1 from './../../../assets/Banner/banner-01.jpg';
+import img2 from './../../../assets/Banner/banner-02.jpg';
+import img3 from './../../../assets/Banner/banner-03.jpg';
 const CarouselComponent = () => {
 
   const panner = [

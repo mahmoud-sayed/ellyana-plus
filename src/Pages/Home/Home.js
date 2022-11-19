@@ -1,12 +1,12 @@
 import React from 'react';
-import CarouselComponent from './../../components/Carousel/CarouselComponent';
-import HomeProductCard from '../../components/ProductCards/HomeProductCard/HomeProductCardHover';
+import CarouselComponent from './/Carousel/CarouselComponent';
+// import HomeProductCard from '../../components/ProductCards/HomeProductCard/HomeProductCardHover';
 
+{/* <HomeProductCard /> */ }
 const Home = () => {
   return (
     <div>
       <CarouselComponent />
-      <HomeProductCard />
     </div>
   );
 };
