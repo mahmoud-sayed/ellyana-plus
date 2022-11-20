@@ -5,6 +5,7 @@ import style from './BottomNav-style';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import HoverMenu from './HoverMenu/HoverMenu';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -18,6 +19,8 @@ const BottomNav = () => {
   });
   const openHome = Boolean(anchorEl.home);
   const theme = createTheme();
+  const navigate = useNavigate();
+
   console.log({ anchorEl });
 
 
@@ -41,7 +44,7 @@ const BottomNav = () => {
                 onClick={() => setAnchorEl({ ...anchorEl, home: true }, console.log({ anchorEl }))}
               // onMouseLeave={handleClose}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/')}>
                   <ListItemIcon><HomeIcon fontSize='small' sx={{ color: '#fff' }} /></ListItemIcon>
                   <Typography variant='body2'>HOME</Typography>
                 </MenuItem>
@@ -56,7 +59,7 @@ const BottomNav = () => {
               // onClick={handleClick}
               // onMouseLeave={handleClose}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/products')}>
                   <Typography variant='body2'>BRANDS</Typography>
                 </MenuItem>
 
@@ -65,7 +68,7 @@ const BottomNav = () => {
               // name='LOOKBOOK'
               // onClick={handleClick}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/products')}>
                   <Typography variant='body2'>LOOKBOOK</Typography>
                 </MenuItem>
               </Grid>
@@ -73,7 +76,7 @@ const BottomNav = () => {
                 name='ACCESSORIES'
               // onClick={handleClick}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/products')}>
                   <Typography variant='body2'>ACCESSORIES</Typography>
                 </MenuItem>
               </Grid>
@@ -81,7 +84,7 @@ const BottomNav = () => {
                 name='PAGES'
               // onClick={handleClick}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} >
                   <Typography variant='body2'>PAGES</Typography>
                 </MenuItem>
               </Grid>
@@ -89,7 +92,7 @@ const BottomNav = () => {
               // onMouseEnter={handleClick}
               // onMouseLeave={handleClose}
               >
-                <MenuItem sx={style('listItem', theme)}>
+                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/blog')}>
                   <Typography variant='body2'>BLOG</Typography>
                 </MenuItem>
                 {/* <HoverMenu open={open} handleClose={handleClose} anchorEl={anchorEl} /> */}
