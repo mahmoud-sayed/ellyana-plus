@@ -1,6 +1,7 @@
 import React from 'react';
 // import CarouselComponent from './/Carousel/CarouselComponent';
 import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
+import style from './Home-Style';
 
 const Home = () => {
   const theme = useTheme();
@@ -9,10 +10,25 @@ const Home = () => {
       {/* <CarouselComponent /> */}
       <Box mt={9} mb={5}>
         <Container>
-          <Grid container>
-            <Grid item>
-              <Typography variant='h1' sx={{ fontWeight: 100 }}>NEW RELEASED</Typography>
-              <Typography></Typography>
+          <Grid container justifyContent='center'>
+            <Grid container item alignItems='center' direction='column'>
+              <Grid item>
+                <Typography
+                  variant='body2'
+                  style={style('sectionsCaption', theme)}
+                >
+                  NEW RELEASED
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant='body2'
+                  style={style('sectionsSecondCaption', theme)}
+                >
+                  NEW TRENDING PRODUCT
+                </Typography>
+              </Grid>
+
             </Grid>
             <Grid container item>
               <Grid item></Grid>
@@ -20,7 +36,7 @@ const Home = () => {
           </Grid>
         </Container>
       </Box>
-    </div>
+    </div >
   );
 };
 

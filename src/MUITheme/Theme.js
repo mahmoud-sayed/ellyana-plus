@@ -1,3 +1,5 @@
+
+
 const MUITheme = {
   darkBackGround: {
     main: '#282828',
@@ -6,6 +8,9 @@ const MUITheme = {
   },
   mainPagesBackground: {
     main: '#FAFAFA'
+  },
+  typography: {
+    FontSizeSectionsTitle: '36px'
   }
 
 
