@@ -2,6 +2,7 @@ import React from 'react';
 // import CarouselComponent from './/Carousel/CarouselComponent';
 import { Box, Container, Grid, Typography, useTheme } from '@mui/material';
 import style from './Home-Style';
+import ProductCard from '../../components/ProductCards/productCard';
 
 const Home = () => {
   const theme = useTheme();
@@ -11,7 +12,7 @@ const Home = () => {
       <Box mt={9} mb={5}>
         <Container>
           <Grid container justifyContent='center'>
-            <Grid container item alignItems='center' direction='column'>
+            <Grid container item alignItems='center' direction='column' mb={5}>
               <Grid item>
                 <Typography
                   variant='body2'
@@ -30,8 +31,13 @@ const Home = () => {
               </Grid>
 
             </Grid>
-            <Grid container item>
-              <Grid item></Grid>
+            <Grid container item direction='row' spacing={3}>
+              <Grid item >
+                <ProductCard />
+              </Grid>
+              <Grid item >
+                <ProductCard />
+              </Grid>
             </Grid>
           </Grid>
         </Container>
