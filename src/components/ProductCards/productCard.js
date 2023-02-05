@@ -28,7 +28,7 @@ const ProductCard = () => {
                 Lizards are a widespread group of squamate reptiles, with over 6,000
                 species, ranging across all continents except Antarctica
               </Typography>
-              <Button variant='contained' fullWidth sx={{}}>add to cart</Button>
+              <Button variant='contained' fullWidth >add to cart</Button>
             </CardContent>
           </CardActionArea>
         </Grid>

@@ -10,27 +10,33 @@ import { useNavigate } from 'react-router-dom';
 
 
 const BottomNav = () => {
-  const [anchorEl, setAnchorEl] = useState({
-    home: false,
-    brands: false,
-    lookBook: false,
-    accessories: false,
-    pages: false
-  });
-  const openHome = Boolean(anchorEl.home);
+  const [anchorHome, setAnchorHome] = useState(null);
+  const openHome = Boolean(anchorHome);
+
+  const [anchorBrands, setAnchorBrands] = useState(null);
+  const openBrands = Boolean(anchorBrands);
+
+  const [anchorLookBook, setAnchorLookBook] = useState(null);
+  const openLookBook = Boolean(anchorLookBook);
+
+  const [anchorAccessories, setAnchorAccessories] = useState(null);
+  const openAccessories = Boolean(anchorAccessories);
+
+  const [anchorPages, setAnchorPages] = useState(null);
+  const openPages = Boolean(anchorPages);
+
   const theme = createTheme();
   const navigate = useNavigate();
 
-  console.log({ anchorEl });
 
 
   // const handleClick = (event) => {
   //   // console.log(event.currentTarget.getAttribute("name"));
   //   setAnchorEl(event.currentTarget);
   // };
-  // const handleClose = () => {
-  //   setAnchorEl(null);
-  // };
+  const handleClose = () => {
+    setAnchorHome(null);
+  };
 
 
   return (
@@ -41,17 +47,21 @@ const BottomNav = () => {
             <Grid item container justifyContent='center' alignItems='center' sx={{ height: '100%', width: '100%' }}>
               <Grid item sx={{ height: '100%', display: { xs: 'none', md: 'initial' } }}
                 name='HOME'
-                onClick={() => setAnchorEl({ ...anchorEl, home: true }, console.log({ anchorEl }))}
-              // onMouseLeave={handleClose}
+                onMouseEnter={(event) => { setAnchorHome(event.currentTarget); }}
+                onClick={() => navigate('/')}
+
               >
-                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/')}>
+                <MenuItem
+                  sx={style('listItem', theme)}
+                >
                   <ListItemIcon><HomeIcon fontSize='small' sx={{ color: '#fff' }} /></ListItemIcon>
                   <Typography variant='body2'>HOME</Typography>
                 </MenuItem>
                 <HoverMenu
+                  anchorEl={anchorHome}
                   open={openHome}
-                  handleClose={() => setAnchorEl({ ...anchorEl, home: null })}
-                  anchorEl={openHome} data={'home'}
+                  handleClose={() => setAnchorHome(!anchorHome)}
+                  data={'home'}
                 />
               </Grid>
               <Grid item sx={{ height: '100%', display: { xs: 'none', md: 'initial' } }}
@@ -88,15 +98,7 @@ const BottomNav = () => {
                   <Typography variant='body2'>PAGES</Typography>
                 </MenuItem>
               </Grid>
-              <Grid item sx={{ height: '100%', display: { xs: 'none', md: 'initial' } }}
-              // onMouseEnter={handleClick}
-              // onMouseLeave={handleClose}
-              >
-                <MenuItem sx={style('listItem', theme)} onClick={() => navigate('/blog')}>
-                  <Typography variant='body2'>BLOG</Typography>
-                </MenuItem>
-                {/* <HoverMenu open={open} handleClose={handleClose} anchorEl={anchorEl} /> */}
-              </Grid>
+
               <Grid item sx={{ height: '100%', width: { xs: '100%', md: '25ch' } }}>
                 <MenuItem sx={style('listItemSearch', theme)}>
                   <FormControl fullWidth sx={{ width: { xs: '100%', md: '25ch' }, color: '#fff', height: '100%' }} variant="standard">
